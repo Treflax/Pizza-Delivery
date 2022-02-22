@@ -19,3 +19,11 @@ $('.close-popup-register').click(function() {
     $('.popup-bg-register').fadeOut(600);
     $('html').removeClass('no-scroll');
 });
+
+$('.option').click(function(e){
+    e.preventDefault();
+    $('.option').removeClass('active');
+    $(this).addClass('active');
+})
+
+

@@ -189,7 +189,7 @@ select {
 }
 
 .parallax {
-  background-image: url(../img/topimage-pizza.png);
+  background: var(--bg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -227,8 +227,8 @@ select {
   font-weight: 300;
   font-size: 72px;
   line-height: 88px;
-  text-align: left;
-  max-width: 600px;
+  text-align: var(--al);
+  max-width: 610px;
   z-index: 3;
 }
 
@@ -237,7 +237,7 @@ select {
   font-size: 48px;
   font-weight: bold;
   line-height: 59px;
-  text-align: left;
+  text-align: var(--al);
   color: yellow;
 }
 
@@ -573,6 +573,216 @@ select {
 
 .no-scroll {
   overflow: hidden;
+}
+
+.cataloge {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.cataloge h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 50px;
+}
+
+.cataloge h2 span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  overflow: hidden;
+  min-width: 600px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: calc(100% - 100px);
+  height: 400px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.options .option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 10px;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  background-size: auto 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .option:nth-child(1) {
+  --defaultBackground: #ed5565;
+}
+
+.options .option:nth-child(2) {
+  --defaultBackground: #fc6e51;
+}
+
+.options .option:nth-child(3) {
+  --defaultBackground: #ffce54;
+}
+
+.options .option:nth-child(4) {
+  --defaultBackground: #2ecc71;
+}
+
+.options .option:nth-child(5) {
+  --defaultBackground: #5d9cec;
+}
+
+.options .option.active {
+  -webkit-box-flex: 10000;
+      -ms-flex-positive: 10000;
+          flex-grow: 10000;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  max-width: 600px;
+  margin: 0px;
+  border-radius: 40px;
+  background-size: auto 100%;
+}
+
+.options .option.active .shadow {
+  -webkit-box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+          box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+
+.options .option.active .label {
+  bottom: 20px;
+  left: 20px;
+}
+
+.options .option.active .info > div {
+  left: 0px;
+  opacity: 1;
+}
+
+.options .option:not(.active) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-radius: 30px;
+}
+
+.options .option:not(.active) .shadow {
+  bottom: -40px;
+  -webkit-box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+          box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
+}
+
+.options .option:not(.active) .label {
+  bottom: 10px;
+  left: 10px;
+}
+
+.options .option:not(.active) .info > div {
+  left: 20px;
+  opacity: 0;
+}
+
+.options .shadow {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.options .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
+  color: black;
+}
+
+.options .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
+}
+
+.options .info > div {
+  position: relative;
+  -webkit-transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+
+.options .main {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.options .sub {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.options .btn {
+  margin: 0 auto;
+  height: 50px;
+  width: 100px;
+  border-radius: 30px;
+  border: none;
+  background: #ff6200;
+  color: white;
 }
 
 .about__titel {
