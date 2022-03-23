@@ -6,6 +6,7 @@
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  color: white;
 }
 
 /* Убираем внутренние отступы */
@@ -40,7 +41,11 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background: #4E433E;
+  color: white;
+  background: var(--bag);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 ul[class],
@@ -84,6 +89,11 @@ select {
 
 .container {
   max-width: 1152px;
+  margin: 0 auto;
+}
+
+.min_container {
+  max-width: 750px;
   margin: 0 auto;
 }
 
@@ -400,7 +410,8 @@ select {
   display: block;
   height: 25px;
   width: 25px;
-  margin: -10px 0 -40px 0;
+  margin: -20px 0;
+  margin-left: auto;
   cursor: pointer;
 }
 
@@ -567,7 +578,8 @@ select {
   display: block;
   height: 25px;
   width: 25px;
-  margin: -10px 0 -40px 0;
+  margin: -20px 0;
+  margin-left: auto;
   cursor: pointer;
 }
 
@@ -832,4 +844,316 @@ select {
 
 .mar {
   margin-bottom: 50px;
+}
+
+.contacts {
+  display: block;
+  margin: 50px auto 50px;
+  width: 800px;
+  height: 600px;
+  background: #4e433eb8;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.contacts h2 {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.contacts .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  margin: 10px auto;
+}
+
+.contacts .navigation .navigation__link {
+  vertical-align: top;
+  margin: 0 15px;
+  position: relative;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.contacts .navigation .navigation__link:not(:last-of-type) {
+  margin-right: 60px;
+}
+
+.contacts .navigation .navigation__link:after {
+  content: "";
+  display: block;
+  background-color: #ffffff;
+  opacity: 0;
+  width: 0;
+  height: 1px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 10;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  border-radius: 20px;
+}
+
+.contacts .navigation .navigation__link:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.contacts .contacts__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.contacts .contacts__item .fa-solid {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.contacts .contacts__item hr {
+  height: 460px;
+}
+
+.contacts .contacts__item .marks {
+  display: block;
+  width: 400px;
+}
+
+.contacts .contacts__item .marks .marks__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contacts .contacts__item .marks .location, .contacts .contacts__item .marks .tell__number, .contacts .contacts__item .marks .gmail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.contacts .contacts__item .login {
+  display: block;
+  width: 250px;
+  margin: auto;
+}
+
+.contacts .contacts__item .login form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contacts .contacts__item .login form .email, .contacts .contacts__item .login form .password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+  padding-bottom: 5px;
+}
+
+.contacts .contacts__item .login form input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  caret-color: red;
+}
+
+.contacts .contacts__item .login form input[type="email"]::-webkit-input-placeholder, .contacts .contacts__item .login form input[type="password"]::-webkit-input-placeholder {
+  color: white;
+}
+
+.contacts .contacts__item .login form input[type="email"]:-ms-input-placeholder, .contacts .contacts__item .login form input[type="password"]:-ms-input-placeholder {
+  color: white;
+}
+
+.contacts .contacts__item .login form input[type="email"]::-ms-input-placeholder, .contacts .contacts__item .login form input[type="password"]::-ms-input-placeholder {
+  color: white;
+}
+
+.contacts .contacts__item .login form input[type="email"]::placeholder, .contacts .contacts__item .login form input[type="password"]::placeholder {
+  color: white;
+}
+
+.contacts .contacts__item .login form a {
+  font-size: 14px;
+  margin: -10px 0 20px 0;
+  padding-right: 90px;
+}
+
+.contacts .contacts__item .login form .button {
+  background: #ff0000;
+  border-radius: 5px;
+  border: none;
+  width: 70px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.footer {
+  display: block;
+  width: 100%;
+  background: url(../img/pizzas-footer.png);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.42);
+          box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.42);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.footer .footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: center;
+}
+
+.footer .footer__content .footer__column {
+  margin: 10px 0;
+  width: 25%;
+  padding: 0 30px;
+}
+
+.footer .footer__content .footer__column img {
+  height: 93px;
+  width: 93px;
+  margin: 0 auto;
+}
+
+.footer .footer__content .footer__column h2 {
+  text-align: center;
+}
+
+.footer .footer__content .footer__column .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(254, 13, 13, 0.249);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.footer .footer__content .footer__column .social-links a:hover:nth-of-type(1) {
+  color: #65657b;
+  background: #7700ff;
+}
+
+.footer .footer__content .footer__column .social-links a:hover:nth-of-type(2) {
+  background: red;
+}
+
+.footer .footer__content .footer__column .social-links a:hover:nth-of-type(3) {
+  background: palevioletred;
+}
+
+.footer .footer__content .footer__column .social-links a:hover:nth-of-type(4) {
+  background: #005eff;
+}
+
+.footer .footer__content .logo {
+  height: 93px;
+  width: 93px;
+}
+
+.footer .footer__content .navigation {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+}
+
+.footer .footer__content .navigation li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer .footer__content .navigation li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.footer .footer__content .navigation li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer .copyright-text {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding: 8px 100px;
+  background: rgba(29, 14, 0, 0.694);
+}
+
+.footer .copyright-text a:hover {
+  color: #ff6200;
+  text-decoration: none;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
 }
